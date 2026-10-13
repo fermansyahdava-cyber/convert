@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#11120f">
+<title>MediaFlow — Audio Converter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">♫</span> MEDIA<span>FLOW</span></a>
+  <span class="local-pill"><i></i> KONVERSI DI PERANGKAT</span>
+</header>
+<main>
+  <section class="hero">
+    <div class="eyebrow"><span></span> SIMPLE AUDIO TOOLS</div>
+    <h1>UBAH FILE.<br><em>MUDAH BANGET.</em></h1>
+    <p>Konversi video MP4 menjadi MP3 atau audio MP3 menjadi WAV. Pilih file, tentukan format, lalu unduh hasilnya.</p>
+  </section>
+
+  <section class="converter">
+    <div class="converter-head">
+      <div><div class="eyebrow">MEDIA CONVERTER</div><h2>CONVERT FILE<span>.</span></h2></div>
+      <div class="format-pills"><span>MP4 → MP3</span><span>MP3 → WAV</span></div>
+    </div>
+    <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="Pilih atau jatuhkan file">
+      <div class="upload-icon">↑</div>
+      <h3>Taruh file kamu di sini</h3>
+      <p>atau klik untuk memilih file dari perangkat</p>
+      <button type="button" id="chooseBtn" class="secondary-btn">PILIH FILE</button>
+      <small>MP4, MP3 • Pemrosesan dilakukan di browser</small>
+      <input type="file" id="fileInput" accept="video/mp4,audio/mpeg,.mp4,.mp3" hidden>
+    </div>
+    <div id="fileInfo" class="file-info hidden">
+      <div class="file-icon" id="fileIcon">MP4</div>
+      <div class="file-meta"><strong id="fileName">video.mp4</strong><small id="fileSize">0 MB</small></div>
+      <button id="removeBtn" class="remove-btn" type="button" aria-label="Hapus file">✕</button>
+    </div>
+    <div class="settings">
+      <label for="formatSelect">FORMAT OUTPUT</label>
+      <select id="formatSelect">
+        <option value="mp3">MP3 — Audio universal</option>
+        <option value="wav">WAV — Audio kualitas tanpa kompresi</option>
+      </select>
+      <p id="formatHint">MP4 → MP3: mengambil audio dari video dan menyimpannya sebagai MP3.</p>
+    </div>
+    <button id="convertBtn" class="convert-btn" type="button" disabled><span>✦</span> CONVERT SEKARANG <b>↗</b></button>
+    <div id="progressWrap" class="progress-wrap hidden"><div class="progress-track"><div id="progressBar"></div></div><div class="progress-label"><span id="statusText">Menyiapkan...</span><span id="percentText">0%</span></div></div>
+    <div id="result" class="result hidden">
+      <div class="success-icon">✓</div><div class="result-text"><strong>Konversi selesai!</strong><small id="resultName">audio.mp3</small></div>
+      <a id="downloadBtn" class="download-btn" download>UNDUH FILE ↓</a>
+    </div>
+    <p class="privacy-note">🔒 File diproses di browser kamu dan tidak diunggah ke server.</p>
+    <p id="errorMessage" class="error hidden"></p>
+  </section>
+  <section class="how">
+    <div class="eyebrow">CARA PAKAI</div><h2>TIGA LANGKAH<span>.</span></h2>
+    <div class="steps">
+      <article><b>01</b><h3>Pilih file</h3><p>Masukkan video MP4 atau audio MP3 dari perangkatmu.</p></article>
+      <article><b>02</b><h3>Pilih format</h3><p>MP4 bisa diubah ke MP3 atau WAV. MP3 bisa diubah ke WAV.</p></article>
+      <article><b>03</b><h3>Unduh hasil</h3><p>Setelah selesai, simpan file hasil konversi ke perangkatmu.</p></article>
+    </div>
+  </section>
+</main>
+<footer><a class="brand" href="#"><span class="logo">♫</span> MEDIA<span>FLOW</span></a><p>Tools audio sederhana, langsung dari browser.</p><small>Catatan: dukungan format bergantung pada browser. Konversi MP3 memakai encoder MPEG yang dimuat saat dibutuhkan.</small></footer>
+<script src="https://cdn.jsdelivr.net/npm/lamejs@1.2.1/lame.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
